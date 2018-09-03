@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mc" width="400" height="600" style="border:1px blue solid"></canvas>
+    <script>
+        //告诉编译器是什么@type
+    /** @type {HTMLCanvasElement}*/
+    var cvs=document.getElementById('mc');
+    var ctx=cvs.getContext('2d');
+    // 填充矩形
+    ctx.fillStyle='#f00';
+    ctx.fillRect(30,20,120,60);
+    // 空心矩形，连接处为棱角
+    ctx.strokeStyle='#00f';
+    ctx.lineJoin='bevel';
+    ctx.lineWidth=10;
+    ctx.strokeRect(30,120,120,60);
+    // 空心矩形，连接处为圆形
+    ctx.strokeStyle='#0ff';
+    ctx.lineJoin='round';
+    ctx.strokeRect(30,220,120,60);
+    // 填充文本
+    ctx.fillStyle='#f00';
+    ctx.font='italic 50px 隶书';
+    ctx.fillText('hello world',180,120);
+    //空心文本
+    ctx.strokeStyle='#00f';
+    ctx.lineWidth=1;
+    ctx.textBaseAlign='top';
+    ctx.strokeText('javascript',200,200);
+    ctx.shadowBlur=5.6;
+    ctx.shadowColor='#222';
+    ctx.shadowOffsetX=10;
+    ctx.shadowOffsetY=-8;
+    ctx.fillText('css',120,300);
+       </script>
+</body>
+</html>
