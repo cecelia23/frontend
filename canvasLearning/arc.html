@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./rounds.js'></script>
+    <script src='./stars.js'></script>
+    <script src='./roundRect.js'></script>
+    <script src='./Flower.js'></script>
+</head>
+<body>   
+    <canvas id='mc' width='800' height='800' style='border:solid 1px gray'></canvas>
+    <script>
+    /** @type {HTMLCanvasElement}*/
+    var cvs=document.getElementById('mc');
+    var ctx=cvs.getContext('2d');
+
+    //练习
+    ctx.beginPath();
+    ctx.arc(50,50,40,Math.PI,Math.PI*2);
+    ctx.lineTo(80,100);
+    ctx.rect(140,50,40,60);
+    ctx.closePath();
+    ctx.fillStyle='#202';
+    ctx.fill();
+    //画渐变圆
+   
+    createRounds(ctx,10);
+    //画圆角矩形
+    createRoundRect(ctx,100,200,300,380,30);
+    ctx.lineWidth=3;
+    ctx.strokeStyle='#0f0';
+    ctx.stroke();
+ 
+    //画7角星  
+    createStars(ctx,5,600,100,100);
+    ctx.stroke();
+
+    //画花瓣
+    createFlowers(ctx,5,560,500,100,300);
+    ctx.stroke();
+    // ctx.fillStyle='#f00';
+    // ctx.fill();
+
+    </script>
+</body>
+</html>

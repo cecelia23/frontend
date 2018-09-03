@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='mc' width='600' height='350' style='border:solid 1px black'></canvas>
+    <script>
+        //倾斜变换
+    function skew(context,angle){
+        context.transform(1,0,-Math.tan(angle),1,0,0);
+    }
+    /**@type{HTMLCanvasElement}*/
+    var cts=document.getElementById('mc');
+    var ctx=cts.getContext('2d');
+    ctx.fillStyle='rgba(0,255,120,0.6)';
+    //设置画笔初始位置
+    ctx.translate(350,5);
+    for(let i=0;i<10;i++){
+        //平移
+        ctx.translate(50,30);
+        //缩放
+        ctx.scale(0.93,0.93);
+        //倾斜
+        skew(ctx,Math.PI/10);
+        ctx.fillRect(0,0,80,60);
+
+    }
+    </script>
+</body>
+</html>

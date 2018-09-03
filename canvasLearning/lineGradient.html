@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='mc' height='400' width='600' style='border:solid 1px black'></canvas>
+    <script>
+        /**@type{HTMLCanvasElement}*/
+        var cvs=document.getElementById('mc');
+        var ctx=cvs.getContext('2d');
+        ctx.save();
+        ctx.translate(130,160);
+        lg=ctx.createLinearGradient(0,0,160,180);
+        lg.addColorStop(0.5,'#0f0');
+        lg.addColorStop(0.2,'#f00');
+        lg.addColorStop(0.9,'#00f');
+        ctx.fillStyle=lg;
+        ctx.fillRect(0,0,160,180);
+        ctx.restore();
+
+        ctx.translate(80,60);
+        ctx.beginPath();
+        ctx.arc(50,30,50,0,Math.PI*2);
+        ctx.closePath();
+        ctx.lineWidth=10;
+        var lg2=ctx.createLinearGradient(-40,-40,80,50);
+        lg2.addColorStop(0.3,'#ff0');
+        lg2.addColorStop(0.4,'#0ff');
+        lg2.addColorStop(0.8,'#f0f');
+        ctx.strokeStyle =lg2;
+        ctx.stroke();
+
+    </script>
+
+</body>
+</html>

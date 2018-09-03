@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <canvas id='mc' height='600' width='800' style="border:solid 1px gray"></canvas>
+   <script>
+   var img=new Image();
+   img.src='../font/北京邮电大学.png';
+   /** @type{HTMLCanvasElement}*/
+   var cvs=document.getElementById('mc');
+   var ctx=cvs.getContext('2d');
+   img.onload=function(){
+    ctx.drawImage(img,200,100);
+    ctx.drawImage(img,300,100,100,24);
+   }
+
+   </script>
+</body>
+</html>

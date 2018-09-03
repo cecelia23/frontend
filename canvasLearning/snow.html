@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='./Flower.js'></script>
+</head>
+<body>
+    <canvas id='mc' width='420' height='280' style='border:solid 1px black'></canvas>
+    <script>
+       
+    snowPosition=[
+        {x:20,y:4},{x:60,y:4},{x:100,y:4},{x:140,y:4},{x:180,y:4},{x:220,y:4},{x:260,y:4},{x:300,y:4},{x:340,y:4},{x:380,y:4}
+    ];
+    function fall(context){
+        //背景填充为黑色
+        context.fillStyle='#000';
+        context.fillRect(0,0,420,280);
+        //前景色为白色
+        context.fillStyle='#fff';
+       
+        for (let i=0,len=snowPosition.length;i<len;i++){
+            //保存初始的坐标系，防止叠加效应
+            context.save();
+            //坐标系的平移和旋转
+            context.translate(snowPosition[i].x,snowPosition[i].y);
+            context.rotate((Math.random()*6-3)*Math.PI/10);
+            //向下飘落
+            snowPosition[i].y+=Math.random()*8;
+            if(snowPosition[i].y>280){
+                snowPosition[i].y=4;
+            }
+            createFlowers(context,6,0,0,5,8);
+            context.fill();
+            
+            context.restore();
+        }
+    }  
+    var cvs=document.getElementById('mc');
+    var ctx=cvs.getContext('2d');  
+    // fall(ctx);
+    setInterval('fall(ctx);',200);
+</script>
+</body>
+</html>

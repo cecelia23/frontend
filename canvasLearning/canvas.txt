@@ -1,0 +1,6 @@
+今日任务，学习canvas
+在使用DOM获取canvas元素后，后续的操作（获取CanvasRenderingContext2D对象）无法自动补全，
+解决方案：提前告诉编译器是什么type：
+/** @type {HTMLCanvasElement}*/
+    var cvs=document.getElementById('mc');
+    var ctx=cvs.getContext('2d');

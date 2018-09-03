@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>选择叠加风格：</h2>
+    <select style='width:200px;' onchange='draw(this.value);'>
+        <option value='source-over'>source-over</option>
+        <option value='source-in'>source-in</option>
+        <option value='source-out'>source-out</option>
+        <option value='source-atop'>source-atop</option>
+        <option value='destination-over'>destination-over</option>
+        <option value='destination-in'>destination-in</option>
+        <option value='destination-out'>destination-out</option>
+        <option value='destination-atop'>destination-atop</option>
+        <option value='copy'>copy</option>
+        <option value='xor'>xor</option>
+        <option value='lighter'>lighter</option>
+    </select></br>
+    <canvas id='mc' width='600' height='450' style='border:solid 1px black'></canvas>
+    <script>
+        /**@type{HTMLCanvasElement*/
+        var cts=document.getElementById('mc');
+        var ctx=cts.getContext('2d');
+        function draw(value){
+            ctx.save();
+            ctx.clearRect(0,0,600,450);
+            ctx.fillStyle='#0ff';
+            ctx.fillRect(30,20,100,150);
+            ctx.globalCompositeOperation=value;
+            ctx.fillStyle='#0f0';
+            ctx.fillRect(50,60,100,150);
+            ctx.restore();
+        }
+        draw('sourece-over')
+    </script>
+</body>
+</html>
