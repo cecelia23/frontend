@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音乐播放器</title>
+</head>
+<body>
+    音频播放器
+    <select id='playType'>
+        <option value='sequence'>顺序播放</option>
+        <option value='random'>随机播放</option>
+    </select><br>
+    <audio id='player' controls  autoplay="autoplay">您的浏览器不支持</audio>
+    <span id="detail"></span><br>
+    <h2>视频播放器</h2>
+    <video controls width="300" height="300">您的浏览器不支持</video>
+    <script>
+        var musics=['huge.mp3','missyou.mp3','planet.mp3'];
+        var playType;
+        //正在播放的音频文件的索引
+        var index=2;
+        window.onload=function(){
+            var model=document.getElementById('playType');
+            model.onchange=function(){
+                window.playType=model.value;
+            }
+            /**@type{HTMLAudioElement}*/
+            var player=document.getElementById('player');
+            player.src=musics[index];
+            //设置音量
+            player.volume=0.8 ;
+            player.onended=function(){
+                if (playType=='random'){
+                    index=Math.floor(Math.random()*musics.length);
+                    player.src=musics[index];
+                }else{
+                    index=(index+1) % musics.length;
+                    player.src=musics[index];
+                }
+                player.play();
+            }  
+            var detail=document.getElementById('detail');
+            player.ontimeupdate=function(){
+                // 当前播放时间/总时长
+                detail.innerHTML=player.currentTime+'/'+player.duration;
+            }
+        }
+    </script>
+</body>
+</html>

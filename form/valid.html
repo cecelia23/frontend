@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- fail  to check in chrome and firefox -->
+    图书名：<input id='name' type='text' required autofocus/><br>
+    图书号：<input id='number' type='text' required pattern="\d{3}-\d-\d{3}-\d{5}" /><br>
+    图书价格：<input id='price' type="number" min="20" max="150" step="5"><br>
+    <input type='submit' value="提交" onclick='check();'>
+    <script>
+        function check(){
+            if (document.getElementById('name').value.trim()==""){
+                alert('图书名必填');
+            }
+            if(!document.getElementById('number').checkValidity()){
+                document.getElementById('number').setCustomValidity('图书id必须填写');
+            }
+            if(!document.getElementById('price').checkValidity()){
+                document.getElementById('price').setCustomValidity('图书价格必须在20~150之间，而且必须是5的倍数');
+            }
+        }
+    </script>
+</body>
+</html>

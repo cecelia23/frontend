@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='source' style='height:80px;width:60px;border:1px solid black;' draggable='true'>hello drag</div>
+    <div style='position:absolute;top:0;left:1000;' draggable='false'> <img src='icon.png' id='myIcon'></div>
+    <script>
+    var source=document.getElementById('source');
+    var myIcon=document.getElementById('myIcon');
+    // var myIcon=document.createElement('img');
+    // myIcon.src='./icon.png';
+    // myIcon.style.position='absolute';
+    // myIcon.style.top=100+'px';
+    // myIcon.style.left=200+'px';
+
+    source.ondragon=function(evt){
+        let dt=evt.dataTransfer;
+        dt.effectAllowed='link';  //可以不设置
+        dt.setData('text/plain','www.fkjava.com');
+        dt.setDragImage(myIcon,0,0);  //没试出作用
+    }
+    document.ondragover=function(evt){
+        //取消事件默认行为
+        return false;
+    }
+    document.ondrop=function(evt){
+        source.style.position='absolute';
+        source.style.left=evt.pageX+'px';
+        source.style.top=evt.pageY+'px';
+        //取消事件默认行为
+        return false;
+    }
+    </script>
+</body>
+</html>

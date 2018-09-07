@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id='f1' action='http://www.baidu.com' method='get'>
+        <label for='user'>用户名</label>
+        <input id='user' type='text' name='username' placeholder="手机号或邮箱"><br>
+        <label>密码<input id='password' type='text' name='password'> </label><br>
+        <input id='ok' type='submit' formmethod="POST"><br>
+        性别：
+        <input id='woman' type='radio' name='gender' value='woman'>女
+        <input id='man' type='radio' name='gender' value='man'>男<br>        
+        年级：
+        <input id='g1' type='checkbox' name='grade' value='one'>研一<br>
+        <input id='g2' type='checkbox' name='grade' value='two' checked='checked'>研二<br>
+        <input id='g3' type='checkbox' name='grade' value='three'>研三<br>       
+        下拉菜单
+        <select id='s1' name='lan'>
+            <option value='c'>c语言</option>
+            <option value='java'>java</option>
+            <option value='ruby'>ruby</option>
+        </select><br>
+        多选列表框
+        <select id='s2' name='book' multiple='multiple' size='2'>
+            <option value='java'>java</option>
+            <option value='android'>andriod</option>
+            <option value='java ee'>java ee</option>
+        </select><br>
+        分组多选列表
+        <select id='s3' name='skill' multiple='multiple' size=6>
+            <optgroup id='o1' label='java系列'>
+                <option value='java'>java  </option>
+                <option value='android'>andriod</option>
+                <option value='java ee'>java ee</option>
+            </optgroup>
+            <optgroup id='o2' label='其他类'>
+                    <option value='c'>c语言</option>
+                    <option value='ruby'>ruby</option>
+            </optgroup>
+        </select><br>
+        多行文本
+        <textarea id='t1' rows="10" cols="20" name='multi'></textarea>
+        <textarea id='t2' rows="10" cols="20" name='only-multi' readonly="readonly">疯狂java讲义</textarea>
+
+        <button id='b1' type='submit'><b>提交</b></button><br>
+    </form>
+
+    list属性<input id='test' type='text' name='test1' form='f1' list='l1' >
+    <datalist id='l1'>
+        <option id='dt1' value='1'>一</option>
+        <option id='dt2' value='2'>二</option>
+        <option id='dt3' value='3'>三</option>
+    </datalist>
+
+    <button id='b2' type='submit' form='f1' formmethod="GET" formtarget="_blank"><img src='../canvasLearning/s5.png' height=50 width=50></button>
+</body>
+</html>

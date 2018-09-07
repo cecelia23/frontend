@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            display:inline-block;
+            padding:10px;
+            margin:3px;
+            background-color: #bbb;
+        }
+    </style>
+
+</head>
+<body>
+    <div id='source' style='width:600px;border:1px solid black' >
+    <h2>可将下列div拖入目标区域</h2>
+    <div draggable='true' ondragstart='dsHandler(event);'>html</div>
+    <div draggable='true' ondragstart='dsHandler(event);'>css</div>
+    <div draggable='true' ondragstart='dsHandler(event);'>javascript</div>
+    <div draggable='true' ondragstart='dsHandler(event);'>jQuery</div>
+    </div>
+    <div id='dest' style='border:1px solid black; width:400px; height:400px'>
+        <h2 >收藏夹</h2>
+    </div>
+    <img id='gb' src='s5.png' alt='垃圾桶' draggable='false' style='float:left'>
+    <script>
+        var dest=document.getElementById('dest');
+        var gb=document.getElementById('gb');
+        var dsHandler=function(evt){
+            evt.dataTransfer.setData('text/plain',"<item>"+evt.target.innerHTML);
+        }
+        //拖到目标位置后，放下
+        dest.ondrop=function(evt){
+            let text=evt.dataTransfer.getData('text/plain');
+            if(text.indexOf('<item>')==0){
+                var newEle=document.createElement('div');
+                newEle.id=new Date().getUTCSeconds();
+                //去除<item>后
+                newEle.innerHTML=text.substring(6);
+                newEle.draggable='true';
+                newEle.ondragstart=function(evt){
+                    evt.dataTransfer.setData('text/plain','<remove>'+newEle.id);
+                }
+            }
+            dest.appendChild(newEle);
+        }
+        gb.ondrop=function(evt){
+            let id=evt.dataTransfer.getData('text/plain');
+            if (id.indexOf('<remove>')==0){
+                let target=document.getElementById(id.substring(8));
+                dest.removeChild(target);
+            }
+        }
+        document.ondragover=function(evt){
+            return false;
+        }
+        document.ondrop=function(evt){
+            return false;
+        }
+    </script>
+
+</body>
+</html>
