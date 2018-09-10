@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* 为div下面的div元素定义计数器 */
+        div>div{          
+            counter-increment: mycounter;
+        }
+        div>div:before{
+            content:'第' counter(mycounter) '本.';
+            font-size:20pt;
+            color:gold;
+        }
+        /* 每次遇到h2时，counter自增，mycounter重置=0 */
+        div>h2{
+            counter-increment: counter;
+            counter-reset: mycounter;
+        }
+        div>h2:before{
+            content: counter(counter,upper-roman) '.';
+            color:fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>bookshop!</h2>
+        <div>java</div>
+        <div>c++</div>
+        <div>ios</div>
+        <h2>another</h2>
+        <div>css</div>
+        <div>javascript</div>
+
+    </div>
+</body>
+</html>

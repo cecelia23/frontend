@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div:target{
+        background-color:#60c;
+    }
+    div:not(#c){
+        color:green;
+    }
+    </style>
+</head>
+<body>
+    <p id='menu'>
+        <!-- 锚点：只能通过id -->
+        <a href="#java">java</a>
+        <a href="#ee">ee</a>
+        <a href="#c">c</a> 
+        <a href='#html'>html</a>
+    </p>
+    <div  id='java'>
+        <h2>疯狂java讲义</h2>
+    </div>
+    <div id='ee'>
+        <h2>轻量级java ee</h2>
+    </div>
+    <div id='c'>
+        <h2>c语言入门到精通</h2>
+    </div>
+    <div id="html">
+        <h2>html5</h2>
+    </div>
+</body>
+</html>

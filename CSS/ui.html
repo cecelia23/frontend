@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            border:1px solid black;
+            font-size:30pt;
+        }
+        tr:hover{
+            background-color:chartreuse;
+        }
+        :focus{
+            text-decoration: underline;
+        }
+        :enabled{
+            font-weight: bold;
+            font-size:20pt;
+        }
+        :disabled{
+            font-size:10pt;
+        }
+        :checked{
+            outline:5px solid red;
+        }
+        :default{
+            outline:3px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <table style='width:400px;border-collapse:collapse;'>
+        <tr>
+            <td>1.1</td>
+            <td>1.2</td>
+        </tr>
+        <tr>
+                <td>2.1</td>
+                <td>2.2</td>
+        </tr>
+            <tr>
+                <td>3.1</td>
+                <td>3.2</td>
+        </tr>
+    </table>
+    <button disabled>不可用按钮</button>
+    <input id='t1' type='text' disabled>
+    <button >可用按钮</button>
+    <input id='t2' type='text' >
+    男：<input type='radio' name='gender' value='man'>
+    女：<input type='radio' name='gender' value='woman'>
+    未知：<input type="radio" name='gender' value='unknown' checked>
+</body>
+</html>

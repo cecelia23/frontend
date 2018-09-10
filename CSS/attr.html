@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:30px;
+            background-color: #eee;
+            border:1px solid black;
+            padding: 10px;
+        }
+        div[num]{
+            background-color:#aaa;
+        }
+       
+        div[id*=xx]{
+            background-color: #999;
+        }
+        div[id^=xx]{
+            background-color:#555;
+        }
+        div[id=xx]{
+            background-color:#333;
+        }
+        div#a{
+            border:2px dotted black;
+            background-color:#888;
+        }
+        div.myclass{
+            background-color:#30C;
+        }
+        
+        div .a{
+            background-color:#222;
+            width:400px;
+            height:30px;
+        }
+        div>.a{
+            background-color:#03C;
+        }
+        .c,#abc{
+            width:200px;
+        }
+       #abc ~ .c{
+           width:500px;
+       }
+    </style>
+</head>
+<body>
+    <div>没有带任何属性的div元素</div>
+    <div num='1'>带num属性的div</div>   
+    <div id='zzxx'>div的id属性中包含'xx'</div>
+    <div id="xxyy">div的id属性是以'xx'开头的</div>
+    <div id='xx'>id属性等于'xx'的</div>
+
+    <div id="a">id选择器</div>
+    <div class='myclass'>class选择器</div>
+    <div><section><div class='a'>（包含选择器）div下面包含class为a的元素</div></section></div>
+    <div><div class="a">（直属选择器）包含直接子元素,class为a</div></div>
+    <div class='c'>hello</div>
+    <div id='abc'><p>选择器组合</p></div>
+    <div class='c'>兄弟选择器(只对后面的兄弟起作用)</div>
+</body>
+</html>

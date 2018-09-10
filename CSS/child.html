@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    li:first-child{
+        border:1px solid black;
+    }
+    li:last-child{
+        border:1px dotted red;
+    }
+    li:nth-child(2){
+        color:#888;
+    }
+    li:nth-last-child(2){
+        background-color: yellowgreen;
+    }
+    span:only-child{
+        font-size:30pt;
+        background-color:teal;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id='1'>java</li>
+        <li id="2">jeff</li>
+        <li id="3">honey</li>
+        <li id="4">rabbit</li>
+        <li id="5">pancake</li>
+    </ul>
+    <ol>
+        <li>gun</li>
+        <li>killer</li>
+        <li>knife</li>
+        <li>moon</li>
+        <li><span>这个span是其父节点li的only-child</span></li>
+    </ol>
+    <!-- 下面这个<span></span>不是其父结点的only-child -->
+    <span>what is the scene?</span>
+</body>
+</html>

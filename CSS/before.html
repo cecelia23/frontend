@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div>div{
+        quotes: "《" "》";
+    }
+    div>div:before{
+        content:open-quote;
+    }
+    div>div:after{
+        content:close-quote;
+    }
+    div>div.no:before{
+        content:'look,';
+        font-size:20pt;
+        background-color:#0fc;
+    }
+   
+    div>p:after{
+        content:url("icon.png");
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div class='no'>new bookshop!</div>
+        <div>java</div>
+        <div>andriod</div>
+        <div>c++</div>
+        <div>ios</div>
+        <P>this is a picture.</P>
+    </div>
+</body>
+</html>

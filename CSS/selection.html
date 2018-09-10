@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        td{
+            border:1px solid green;
+            width:80px;
+        }
+        /* 只读 */
+        :read-only{
+            background-color:rebeccapurple;
+        }
+        :read-write{
+            background-color:#888;
+        }
+        /* 选中 */
+        ::selection{
+            background-color:red;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1.1</td>
+        </tr>
+        <tr>
+            <td contenteditable="true">2.1</td>
+        </tr>
+    </table>
+    <input type="text" value="可读写">
+    <input type="text" readonly value="只读">
+</body>
+</html>
