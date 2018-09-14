@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background-image:url('./桌面.jpg');
+            padding:12px;
+            border:10px dotted #444;
+            width:200px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <div>测试文字</div>
+    <div style="background-clip:no-clip;">测试文字</div>
+    <div style="background-clip:border-box">测试文字</div>
+    <div style="background-clip:padding-box;">测试文字</div>
+    <div style="background-clip:content-box">测试文字</div>
+    background-origin初始位置
+    1<div style='background-origin:border;-webkit-background-origin:border;'>测试文字</div>
+    2<div style="background-origin:padding;-webkit-background-origin:padding;">测试文字</div>
+    3<div style="background-origin:content;-webkit-background-origin:content;">测试文字</div>
+    控制背景图片大小background-size
+    1<div style="background-size:100% 80%;">测试文字</div>
+    2<div style="background-size:20% auto;">测试文字</div>
+    3<div style="background-size:auto 30%;">测试文字</div>
+    4<div style="background-size:60px 30px;">测试文字</div>
+
+</body>
+</html>

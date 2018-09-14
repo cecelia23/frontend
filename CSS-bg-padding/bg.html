@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:300px;
+            height:80px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color:aqua">测试文字</div>
+    默认repeat:
+    <div style="background-image:url('../font/北京邮电大学.png');">测试文字</div>
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:no-repeat;">测试文字</div>
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:repeat-x;">测试文字</div> 
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:repeat-y;">测试文字</div>
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:repeat">测试文字</div>
+  
+    相对位置
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:no-repeat;background-position: 20% 30%">测试文字</div>  
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:no-repeat;background-position:30px 8px;">测试文字</div>  
+    <div style="background-image:url('../font/北京邮电大学.png');background-repeat:no-repeat;background-position:center bottom;">测试文字</div>
+
+    固定
+    <div style="width:1000px;height:1000px;background-image:url('../canvasLearning/icon.png');background-repeat:no-repeat;background-attachment:fixed;">测试文字</div> 
+    滚动
+    <div style="width:1000px;height:800px;background-image:url('../canvasLearning/icon.png');background-repeat:no-repeat;background-attachment:scroll;">测试文字</div> 
+   
+
+
+</body>
+</html>

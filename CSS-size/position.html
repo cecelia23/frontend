@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{border:1px solid black;}
+    #div1{
+        width:100px;
+        height:100px;
+        background: color #666666;
+              
+    }
+    </style>
+</head>
+<body>
+    <!-- absolute主要可以用在顶着左上角设置的菜单栏 -->
+    <div id='div1'style="position:absolute;top:50px; left:50px;z-index: 2;">absolute </div>
+    <!-- relative为目标对象预留出位置，然后在预留位置的基础上进行定位 -->
+    <div style="position: relative;top:50px; left:50px;z-index: 3;width:100px;height:100px;">relative</div>
+    <!-- fix无论页面如何滚动，始终停留在页面的同一位置 -->
+    <div style="position:fixed;bottom:10px;right:10px;width:280px;height:280px;">fix</div>
+    <div style="position:absolute;top:0;left:0;width:200px;height:1000px;">
+        <!-- 设置static后，top，left，right,bottom对其不起作用 -->
+            <div style="position:relative;width:100px;height:100px;left:0;top:0px;"></div>
+            <div style="position:static;width:100px;height:100px;right:0;bottom:300px;"></div>
+    </div>
+
+</body>
+</html>
