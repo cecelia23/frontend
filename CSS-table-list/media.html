@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            text-align: center;
+            margin:auto;
+            width:750px;
+            display:box;
+            -webkit-box-orient:horizontal;
+        }
+        #container>div{
+            border:1px solid #aaf;
+            text-align: left;
+            box-sizing:border-box;
+            border-radius:10px 12px 12px 10px;
+            background-color:#ffc;
+            padding:5px;
+        }
+        div#left{
+            width:300px;
+            height:230px;
+            float:left;
+        }
+        div#medium{
+            width: 450px;
+            height:230px;
+            float:left;
+            clear:right;
+        }
+        div#right{
+            width:750px;
+            height:230px;
+            float: left;
+        }
+        @media screen and (min-width:1000px){
+            #container{
+            text-align: center;
+            margin:auto;
+            width:960px;
+            display:box;
+            -webkit-box-orient:horizontal;
+        }
+        #container>div{
+            border:1px solid #aaf;
+            text-align: left;
+            box-sizing:border-box;
+            border-radius:10px 12px 12px 10px;
+            background-color:#ffc;
+            padding:5px;
+        }
+        div#left{
+            width:240px;
+            height:230px;
+            float:left;
+        }
+        div#medium{
+            width: 460px;
+            height:230px;
+            float:left;
+            clear:none;
+        }
+        div#right{
+            width:260px;
+            height:230px;
+            float: left;
+        }
+        }
+        @media screen and (max-width:480px){
+            #container{
+            text-align: center;
+            margin:auto;
+            width:450px;
+            display:box;
+            -webkit-box-orient:horizontal;
+        }
+        #container>div{
+            border:1px solid #aaf;
+            text-align: left;
+            box-sizing:border-box;
+            border-radius:10px 12px 12px 10px;
+            background-color:#ffc;
+            padding:5px;
+        }
+        div#left{
+            width:450px;
+            height:230px;
+            float:left;
+        }
+        div#medium{
+            width: 450px;
+            height:230px;
+            float:left;
+            clear:both;
+        }
+        div#right{
+            width:450px;
+            height:230px;
+            float: left;
+        }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="left">
+            <h2>chapter one</h2>
+            <p>In this section the proposed generalized block-size based 
+                    prediction error embedding scheme is presented in details. The 
+                    scheme predicts the values of the residual pixels in a block 
+                    with generalized size using the Euclidean distance. The block 
+                    generalization scheme presented here provides the flexibility 
+                    of using blocks that have same dimensions for an image but 
+                    their size vary arbitrarily rather than being 3×3 as used in all 
+                    of the previous satellite pixel based block prediction methods. 
+                    The problem of misleading block classifier has been resolved. 
+                    These stated issues along with the message embedment and 
+                    extraction rules are outlined at the following subsections. </p>
+        </div>
+        <div id="medium">
+            <h2>chapter two</h2>
+            <p>To protect the misguidance by the block classifier due to 
+                    any abrupt variation in the value of a single satellite pixel and 
+                    to detect any sharp hill or deep valley around the vicinity of 
+                    the basic pixel, the block variance calculation is modified. 
+                    First, a mean of four satellite pixels, MoS, are measured. For 
+                    all natural images, it can be expected that MoS≈ i j , I . Hence, 
+                    the variance of (MoS, i j , I ) is applied to grade a block more 
+                    accurately as smooth or complex. These are shown in the 
+                    following equations (4) and (5)</p>
+        </div>
+        <div id="right">
+            <h2>chapter three</h2>
+            <p>The process of managing the assistant information AIinfo , 
+                    i.e. a set of values like length of message, TH, H
+                    p and, 
+                    Hn and hiding it into the image part A are explained in [6] and 
+                    hence, the details are not explained in this article. Let the stego 
+                    part of A is A . The secret information is embedded into the prediction errors Ei j , , computed from the lower part I of the 
+                    image. The embedding is done by the following equation (7)</p>
+        </div>
+    </div>
+</body>
+</html>
