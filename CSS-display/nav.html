@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            position:absolute;
+            top:0px;
+            left:0px;
+            background-color:peru;
+            border:1px solid peru;
+            width:100%;
+            height:48px;
+        }
+        div>div{
+            position:relative;
+            display:inline-block;
+            margin:0 -3px;
+            border:black 1px solid;
+            width:120px;
+            /* height:48px; */
+            /* 水平居中 */
+            text-align: center; 
+            /* 垂直居中 */
+            line-height: 48px;
+        }
+        
+     
+        div>div:hover{
+            background-color:rgb(9, 143, 132);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div><a>jiamao</a></div>
+        <div><a>yunyun</a></div>
+        <div><a>dean</a></div>
+        <div><a>duizhang</a></div>
+  
+
+    </div>
+</body>
+</html>

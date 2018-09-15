@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        margin:0px;
+    }
+    div#container{
+        border:1px solid black;
+        display: box;      
+        display:-webkit-box;
+        /* -webkit-box-orient:vertical; */
+        -webkit-box-orient:horizontal;        
+        width:960px;
+        height:500px;
+
+    }
+    #container>div{
+        width:240px;
+        border:2px dotted pink;
+        border-radius:10px 12px 10px;
+        padding:5px;
+        box-sizing:border-box;
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <div style="-webkit-box-flex:1;">
+                <h2>module one</h2>
+                <ul>
+                    <li>jinri</li>
+                    <li>nihao</li>
+                </ul>
+        </div>
+            <div style="-webkit-box-flex:2;">
+                    <h2>module two</h2>
+            <p>iasjgifwghb hwefoahg oisdgfisgifidsv
+                vbiafivefiyhvudsvvgfugsdfgefdgeg</p>   
+            </div> 
+    
+            <div style="-webkit-box-flex:3;">
+                <h2>module three</h2>
+                <ul>
+                    <li>jintianshi </li>
+                    <li>2018</li>
+                    <li>09</li>
+                    <li>14</li>
+                </ul>     
+            </div>
+            
+</div>
+</body>
+</html>
