@@ -1,4 +1,4 @@
-Date:2018-08-26
+Date:2018-08-26 
 (vscode使用：在vscode中写html，自动补全头部 1.空文档中，输入“！” 2.按Tab键)
 HTML,css,javascript 构成了前端的三大基础。
 其中，HTML（Hypertext Markup Language）是一门超文本标记语言，用于定义web网页的结构。HTML由一系列的元素组成，比如段落标签<p></p>,图像标签<img>等
@@ -41,3 +41,6 @@ function setUserName() {
 }
 上面这段代码中，设置断点后，localStorage.setItem('name',myName) 并没有起作用，name变量值为空，
  myHeading.textContent = 'Mozilla is cool, ' + myName;    //报错
+ 
+今天的学习时间1~2小时，简单回顾了一下自己HTML,CSS,javascript的基础知识。虽然之前自学过一点，但之前没涉及html5，CSS也是比较基础的，最近在看ES6，但其实ES5并没有全看。真的是学的很不系统呀！
+希望今后能每天跟上进度，把前端的基础打牢，加油~Day1
