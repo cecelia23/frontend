@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    div{
+        position: relative;
+        border:solid 1px black;
+        top:0px;
+        left: 0px;
+        width:400px;
+        height:300px;
+        padding:10px;
+        box-sizing:border-box;
+        transition:background-color 4s ease-in,top 3s ease-out,left 4s linear;
+        /* -webkit-transition:background-color 4s ease-in-out,top 3s ease-out; */
+    }
+    div:hover{
+        background-color:yellow;
+        top:200px;
+        left:300px;
+    }
+    </style>
+</head>
+<body>
+    <div>悬停时发生背景色改变</div>
+</body>
+
+</html>

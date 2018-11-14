@@ -9,20 +9,40 @@
     <style>
        
         .header{
-            position:fixed;
+            position: absolute;
             top:0;
             left:0;
             width:100%;
             line-height:33px;
-            background-color:khaki;
-           
+            color:gray;          
         }
         #d1{
             display:inline-block;
             text-align:left;            
             font-size:30px;
             margin: 0 auto;
-            padding: 0 auto"
+            padding: 0 auto;
+        }
+        #main{
+            width:80%;     
+        }
+        #td1{
+            width:400px;
+        }
+        #td2{
+            width:300px;
+        }
+        #subtitle{
+            color:#336699;
+            font-size:18pt;
+            text-align: left;
+            padding:10px;
+        }
+        #line{
+            height:2px;
+            background-color:#336699;
+            margin:0;
+            width:80%;
         }
         /* @font-face {
         font-family: 'bupt';
@@ -36,16 +56,63 @@
         } */
     </style>
 </head>
-<body>
-    <div class='header'>
-        <div id="d1" style="margin-left:100px;width:200px;"><img src="./font/北京邮电大学.png"></div>
-        <div id="d1" style="font-family:initial;padding-top:0;"><b>B</b>eijing <b>U</b>niversity of <b>P</b>ost and <b>T</b>elecommunications</div>
-        <div style="height:2px;background-color:gray;margin:0"></div>
+<body style="overflow-y:auto;">
+    <div id="main">
+            <div class='header'>
+                <div id="d1" style="margin-left:140px;width:250px;font-family:'楷体';font-size:24pt;">北京邮电大学</div>
+                <div id="d1" style="font-family:initial;margin-left:70px;"><b>B</b>eijing <b>U</b>niversity of <b>P</b>ost and <b>T</b>elecommunications</div>
+                <div style="height:2px;background-color:gray;margin:0"></div>
+            </div>
+        <div style="position:absolute;top:60px;left:120px;">
+            <table style="font-size:18pt;text-align: left;">
+                <tr style="height:70px;"><td><span style="font-size:30pt;">王悦</span>  |  女</td>
+                    <td><span style="font-family: '楷体';">求职意向：前端工程师</span></td></tr>
+                <tr><td id="td1">出生年月：1994-03</td><td id="td1">学历：硕士研究生</td></tr>
+                <tr><td id="td1">政治面貌：党员</td><td id="td1">毕业时间：2020年6月</td></tr>
+                <tr><td id="td1">TEL:156-5265-1955</td><td id="td1">E-mail:351613102@qq.com</td></tr>
+            </table>
+        
+            <div><img src='E:\picture\悦悦.jpg' style="position:absolute;top:15px;right:450px;height:180px;"></div>
+
+        <div id='subtitle'>教育经历</div>
+        <div id='line'></div>
+        <ul style="width:80%;font-size:14pt;text-align:left;">
+            <li><table><tr><td id="td2">2017.09-至今</td><td id="td2">北京邮电大学</td><td id="td2">网络空间安全学院</td><td id="td1">信息安全（研二）</td></tr></table></li>
+            <li><table><tr><td id="td2">2013.09-2017.06</td><td id="td2">中国农业大学</td><td id="td2">资源与环境学院</td><td id="td1">环境科学</td></tr></table></li>
+            <li><table><tr><td id="td2">2015.09-2017.06</td><td id="td2">中国农业大学</td><td id="td2">信息与电气工程学院</td><td id="td1">计算机科学与技术（双学位）</td></tr></table></li>
+        </ul>
+
+        <div id='subtitle'>项目经历</div>
+        <div id="line"></div>
+        <div id='subtitle' style="font-size:14pt;"><span style="display:inline-block;width:500px;">蜜罐管理系统</span><span style="display:inline-block;width:500px;" >2018.07-2018.09</span></div>
+        <div style="text-align: left;font-size:14pt;"><span><b>主要职责：</b></span>梳理流程，跟进项目进度；根据需求，完善前端页面，提升视觉体验；参与文档水印的添加与检测工作。</div>
+        <div style="text-align: left;font-size:14pt;">个人业绩：独立完成登录页面修改任务；独立实现文档检测功能部分的代码。</div>
+
+        <div id='subtitle'>校内实践</div>
+        <div id='line'></div>
+        <div id='subtitle' style="font-size:14pt;"><span style="display:inline-block;width:500px;">北京邮电大学研究生会权益部副部长</span><span style="display:inline-block;width:500px;" >2018.01-至今</span></div>
+        <div style="width:80%;text-align:left;font-size:14pt;">负责部门职责内活动的策划、组织工作，代表研会出席后勤部门会议。活动策划和组织工作让我更进一步学会了团队合作，锻炼了我的统筹规划、合理安排、协调沟通能力。</div>
+
+        <div id='subtitle'>获奖经历</div>
+        <div id="line"></div>
+        <ul style="width:80%;font-size:14pt;text-align:left;">
+            <li>2017年 美国数学建模大赛一等奖</li>
+            <li>获得国家奖学金1次，获得学习一等奖学金4次，二等奖学金2次</li>
+        </ul>
+        <div id='subtitle'>专业技能</div>
+        <div id="line"></div>
+        <ul style="width:80%;font-size:14pt;text-align:left;">
+            <li>熟悉HTML,CSS,JavaScript,了解Vue框架</li>
+            <li>熟悉python语言，了解Linux系统常用命令</li>
+        </ul>
+        <div id='subtitle'>自我评价</div>
+        <div id="line"></div>
+        <ul style="width:80%;font-size:14pt;text-align:left;">
+            <li>性格开朗，主动学习，责任心强，团队意识强，优秀的行动力和执行力</li>
+            <li>有较强的学习能力和抗压能力</li>
+        </ul>
     </div>
-    
-    <div>
-        <div><table></table></div>
-        <div><img src=''></div>
-    </div>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <style>
+        div{
+        border:1px solid red;
+        background-color:yellow;
+        width:100px;
+        height:200px;
+        transition:background-color 3s linear,width 3s linear, height 3s linear;
+    }
+   </style>
+</head>
+<body>
+    <div id="d1">多种动画形式</div>
+    <button onclick="zoom(2,'blue')">放大</button>
+    <button onclick="zoom(0.5,'green')">缩小</button>
+    <button onclick="zoom(1,'yellow')">恢复</button>
+    <script>
+        var originWidth=100;
+        var originHeight=200;
+        var anim=document.getElementById('d1');
+        function zoom(scale,color){
+            anim.style.backgroundColor=color;
+            anim.style.width=originWidth*scale+'px';
+            anim.style.height=originHeight*scale+'px';
+        }
+    </script>
+</body>
+</html>

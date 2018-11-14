@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            border:solid 1px black;
+            background-color:#444;
+            width:100px;
+            height:100px;
+            position:absolute;
+        }
+        div.a{
+            top:50px;
+            left:50px;
+        }
+        div.b{
+            top:200px;
+            left:100px
+        }
+        div.c{
+            top:350px;
+            left:50px;
+        }
+        div.d{
+            top:500px;
+            left:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">未变形之前</div><div class="a" style="transform-origin:left top;transform:rotate(30deg);">左上角为变形中心</div>
+    <div class="b">未变形之前</div><div class="b" style="transform-origin:right bottom;transform:rotate(65deg);">右下角为变形中心</div>
+    <div class="c">未变形之前</div><div class="c" style="transform-origin:right  center;transform:rotate(-90deg);">右中为变形中心</div>
+    <div class="d">未变形之前</div><div class="d" style="transform:matrix(1.5,0,0,0.6,0px,0px);-webkit-transform:matrix(1.5,0,0,2.6,80px,80px);">应用matrix变形</div>
+</body>
+</html>
