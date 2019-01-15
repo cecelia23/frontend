@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>contextmenu</title>
+</head>
+<body>
+    <div id="myDiv" style="width:100px;height:400px;">dbclick or ctrl+click to get a custom context menu.
+        click anywhere else to get the default context menu.
+    </div>
+    <input type="button" id="btn" value="按钮">
+    <ul id="myMenu" style="visibility:hidden;position:absolute;background-color:red;">
+        <li><a href="https://www.baidu.com">baidu</a></li>
+        <li><a href="https://www.google.com">google</a></li>
+        <li><a href="https://www.yahoo.com">yahoo</a></li>
+    </ul>
+    <script>
+        //test
+        // var btn=document.getElementById('btn');
+        // var handler=function(event){
+        //     btn.style.backgroundColor="#ff0";
+        // };
+        // btn.removeEventListener("click",handler,false);
+
+        // var handler1=function(event){
+        //     // alert(event.target===this);
+        //     // alert(event.currentTarget===this);
+        //     switch (event.type){
+        //         case "click":
+        //         alert("click");
+        //         break;
+        //         case "mouseover":
+        //         alert("mouseover");
+        //         break;
+        //         case "mouseout":
+        //         alert("mouseout");
+        //         break;
+        //     }
+        // }
+        // btn.addEventListener("click",handler1,false);
+        // btn.addEventListener("mouseover",handler1,false);
+        // btn.addEventListener("mouseout",handler1,false);
+
+  
+        // 验证stopPropagation
+        // var handler2=function(event){
+        //     alert(event.eventPhase);
+        // };
+        // btn.onclick=function(event){
+        //     alert(event.eventPhase);
+        //     event.stopPropagation();
+        // };
+        // document.body.addEventListener("click",handler2,true);
+        // document.body.addEventListener("click",function(event){
+        //     alert(event.eventPhase);
+        // },false);
+        
+        //跨浏览器事件对象
+    var EventUtil={
+        addHandler:function(element,type, handler){
+            if (element.addEventListener){
+                element.addEventListener(type,handler,false);
+            }else if(element.attachEvent){
+                element.attachEvent("on"+type,handler);
+            }else{
+                element["on"+type]=handler;
+            }
+        },
+        removeHandler:function(element,type,handler){
+            if (element.removeEventListener){
+                element.removeEventListener(type,handler,false);
+            }else if (element.detachEvent){
+                element.detachEvent("on"+type,handler);
+            }else {
+                element["on"+type]=null;
+            }
+        },
+        getEvent:function(event){
+            return event?event:window.event;
+        },
+        getTarget:function(event){
+            return event.target || event.srcElement;
+        },
+        preventDefault:function(event){
+            if (event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue=false;
+            }
+        },
+        stopPropagation:function(event){
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble=true;
+            }
+        }
+    };
+    EventUtil.addHandler(window,"load",function(event){
+        var div=document.getElementById('myDiv');
+        
+        EventUtil.addHandler(div,"contextmenu",function(event){
+        event=EventUtil.getEvent(event);
+        EventUtil.preventDefault(event);
+
+        var menu=document.getElementById("myMenu");
+        menu.style.left=event.clientX+"px";
+        menu.style.top=event.clientY+"px";
+        menu.style.visibility="visible";
+
+        });
+        EventUtil.addHandler(document,"click",function(event){
+            document.getElementById("myMenu").visibility="hidden";
+        });
+    })
+
+    </script>
+
+</body>
+</html>
