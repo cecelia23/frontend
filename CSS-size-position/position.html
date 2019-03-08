@@ -7,26 +7,30 @@
     <title>Document</title>
     <style>
         div{border:1px solid black;}
-    #div1{
-        width:100px;
-        height:100px;
-        background: color #666666;
+        #div1{
+        width:400px;
+        height:400px;
+        background: #666666;
               
     }
     </style>
 </head>
 <body>
     <!-- absolute主要可以用在顶着左上角设置的菜单栏 -->
-    <div id='div1'style="position:absolute;top:50px; left:50px;z-index: 2;">absolute </div>
+    <div id='div1'style="position:absolute;top:150px; left:250px;z-index: 2;">1.absolute </div>
     <!-- relative为目标对象预留出位置，然后在预留位置的基础上进行定位 -->
-    <div style="position: relative;top:50px; left:50px;z-index: 3;width:100px;height:100px;">relative</div>
-    <!-- fix无论页面如何滚动，始终停留在页面的同一位置 -->
-    <div style="position:fixed;bottom:10px;right:10px;width:280px;height:280px;">fix</div>
-    <div style="position:absolute;top:0;left:0;width:200px;height:1000px;">
-        <!-- 设置static后，top，left，right,bottom对其不起作用 -->
-            <div style="position:relative;width:100px;height:100px;left:0;top:0px;"></div>
-            <div style="position:static;width:100px;height:100px;right:0;bottom:300px;"></div>
+    <div style="position:relative;background:yellow;width:200px;height:400px;">2.relative
+        <div style="position: relative;background:red;top:50px;left:50px;z-index: 3;width:100px;height:100px;">2.1relative left50 top50</div>
+        <div style="position:absolute;top:30px;left:30px;width:200px;height:1000px;">2.2相对于最近的positioned祖先元素
+            <!-- 设置static后，top，left，right,bottom对其不起作用 -->
+                <div style="position:relative;width:100px;height:100px;right:0;top:0px;">2.2.1</div>
+                <div style="position:static;width:100px;height:100px;right:0;bottom:300px;">2.2.2</div>
+        </div>
     </div>
+    
+    <!-- fix无论页面如何滚动，始终停留在页面的同一位置 -->
+    <div style="position:fixed;bottom:10px;right:10px;width:280px;height:280px;">3.fix</div>
+    
 
 </body>
 </html>
