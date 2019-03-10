@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>使用BFC阻止外边距折叠</title>
+    <style>
+    .container { background-color: red; width: 200px; }
+    p { background-color: lightgreen; margin: 10px 0;}
+    .newBFC {overflow: hidden; /* 这条样式专门用来创建BFC */}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <p>Sibling 1</p>
+    <div class="newBFC">
+        <p>Sibling 2</p>
+    </div>
+</div>
+
+</body>
+</html>

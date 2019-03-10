@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无BFC容器无高度包含浮动元素</title>
+    <style>
+    .container { 
+        width: 200px;
+        background-color: green; 
+        outline: 1px dashed red;
+    }
+
+    .container div {
+        float: left; 
+        background-color: lightgreen;
+        margin: 10px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div>Sibling 1</div>
+    <div>Sibling 2</div>
+</div>
+
+</body>
+</html>
