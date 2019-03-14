@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>css阻塞</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      h1 {
+        color: red !important
+      }
+    </style>
+    <script>
+      function h () {
+        console.log(document.querySelectorAll('h1'))
+      }
+      setTimeout(h, 10000)
+    </script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id='div1'>
+      <p>nihao</p>
+      <ul>
+        <li>1.1</li>
+      </ul>
+      <p>bye</p>
+      <span>s1</span>
+      <span>s2</span>
+    </div>
+    <h1>这是红色的</h1>
+  </body>
+</html>
