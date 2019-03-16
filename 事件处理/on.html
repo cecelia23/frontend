@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  div{
+    width:200px;
+    height:100px;
+    border:1px solid black;
+  }
+  </style>
+</head>
+<body>
+  <div class="demo">123</div>
+  <div id='i1'>456</div>
+  <script>
+  var demo=document.querySelector('.demo');
+  var idemo=document.querySelector('#i1');
+  demo.onclick=function(){
+    console.log(this)   //不输出
+  }
+  demo.onclick=function(){
+    console.log(123)   //只输出123
+  }
+  demo.onclick=null;  // 解除事件绑定
+
+  idemo.addEventListener('click',function(){
+    console.log(345);      //绑定两个相同的匿名函数，会输出两次（匿名函数是不同的）
+  },false)
+  idemo.addEventListener('click',function(){
+    console.log(345);      //都会输出
+  },false)
+
+  function eventClick(){
+    console.log(233)
+  }
+  // demo.addEventListener('click',eventClick,false);
+  // demo.addEventListener('click',eventClick,false);  //只输出一次，同一个函数
+
+  demo.addEventListener('click',eventClick,false);
+  demo.addEventListener('click',eventClick,true);  //第三个参数不同，执行两次
+  </script>
+</body>
+</html>
