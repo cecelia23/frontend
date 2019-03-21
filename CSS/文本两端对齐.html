@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 两端对齐 */
+  .justify{
+    width:200px;
+    border:1px solid black;
+    text-align:justify;
+    text-align-last:justify;
+  }
+  /* 分散对齐 */
+  .justify1{
+    width:600px;
+    border:1px solid black;
+    text-align:justify;
+    text-align-last:justify;
+  }
+  .justify1::after{
+    content:"";
+    display:inline-block;
+  }
+
+  </style>
+</head>
+<body>
+  文本两端对齐
+  <div class="justify">hello world!明月几时有，把酒问青天。不知天上宫阙，今昔是何年</div>
+  文本分散对齐
+  <div class="justify1">
+    <p>2019年3月 18日</p>
+    <p>星期一</p>
+  </div>
+  
+
+  
+</body>
+</html>

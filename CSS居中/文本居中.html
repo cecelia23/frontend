@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style> 
+  .outerBox{
+        width:200px;
+        height:100px;
+        border: 1px solid #ececec;
+        text-align:center; /* 水平居中 */
+        display:table-cell; /*转化成table-cell元素*/
+        /* line-height:100px; */   /*方法一*/
+        vertical-align:middle;   /*方法二：垂直居中对齐，vertical-align适用于内联及table-cell元素*/ 
+  }
+  </style>
+</head>
+<body>
+   <div class="outerBox">hello</div>
+</body>
+</html>

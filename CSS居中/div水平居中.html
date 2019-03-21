@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+    -webkit-box-sizing: border-box; /*Safari*/
+    -moz-box-sizing: border-box; /*Firefox*/
+    box-sizing: border-box;
+    }
+  .parentDiv {
+    width:400px;
+    height: 100px;
+    background-color: #00ff00;
+    margin: 20px;
+    /* display: table-cell;
+    text-align: center;
+    vertical-align: middle; */
+  }
+  
+  .childDiv {
+      width: 200px;
+      height:50px;
+      background-color: #ff0000;
+  }
+  /* .childDiv{
+    margin:0 auto;
+  } */
+  /* .parentDiv {
+    text-align: center;
+}
+
+  .parentDiv .childDiv {
+      display: inline-block;
+  } */
+
+
+/*
+table-cell实现居中
+将父盒子设置为table-cell元素，设置
+text-align: center; vertical-align: middle;
+子盒子设置为inline-block元素
+*/
+
+/* .parentDiv{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.childDiv {
+    display: inline-block;
+} */
+
+/*绝对定位实现居中:margin*/
+.parentDiv {
+    position: relative;
+}
+
+.parentDiv .childDiv {
+    /* position: absolute;
+    left:50%;
+    top:50%; */
+    /* margin-left:-100px; */ /*利用margin实现偏移,设置为宽度和高度的一半的负值*/
+    /* margin-top:-25px; */ 
+
+    /* transform: translate(-50%,-50%); */
+
+    /* left:0; 
+    top:0;
+    right: 0;
+    bottom: 0;
+    margin: auto; */
+}
+
+/*flexbox实现居中*/
+.flexBox {
+    display: -webkit-box; /*Safari*/
+    display: -moz-box; /*Firefox*/
+    display: -ms-flexbox; /*IE*/
+    display: -webkit-flex; /*Chrome*/
+    display: flex; 
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+  </style>
+</head>
+<body>
+    <div class="parentDiv flexBox">
+        <div class="childDiv"></div>
+    </div>
+</body>
+</html>

@@ -3,6 +3,7 @@ function inheritPrototype(SuperType,SubType){
   prototype.constructor=SubType;
   SubType.prototype=prototype;
 }
+
 function SuperType(name){
   this.name=name;
 }
