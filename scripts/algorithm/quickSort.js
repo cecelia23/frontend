@@ -23,7 +23,7 @@ function quickSort(start,end){
   quickSort(i+1,end);
 }
 
-var arr=[2,5,9,0,4,8,7,1,3,6];
+var arr=[6,5,4,3,2,1];
 // console.log(arr[0],arr[arr.length-1])
 quickSort(0,arr.length-1);
 console.log(arr)
