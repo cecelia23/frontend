@@ -1,4 +1,4 @@
-function bubbleSort(){
+function bubbleSort(arr){
   let temp;
   let len=arr.length;
   for (let i=1;i<len-1;i++)
@@ -11,7 +11,8 @@ function bubbleSort(){
       }
     }
   }
+  return arr;
 }
 var arr=[2,5,9,4,8,7,1,3,6];
-bubbleSort();
-console.log(arr);
+arr1=bubbleSort(arr);
+console.log(arr1);

@@ -1,4 +1,5 @@
 function quickSort(start,end){
+  // 分治法，二叉树
   if (start>=end){
     return;
   }
