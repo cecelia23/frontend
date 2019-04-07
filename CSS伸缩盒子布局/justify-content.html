@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .flex-container{
+      height:350px;
+      width:320px;
+      display: flex;
+      display:-webkit-flex;
+      /* flex-direction:column; */
+      justify-content:space-around;
+      align-items:center;
+      /* 根据空白进行折叠，并逆序 */
+      flex-wrap:wrap-reverse;
+      /* flex-wrap:wrap; */
+      align-content: center;
+      background:lightgray;
+    }
+    .flex-items{
+      width:100px;
+      height:100px;
+      /* outline:crimson solid 2px; */
+      background:cornflowerblue;
+    }
+    /* .flex-items:first-item{
+      margin:auto;
+    } */
+    
+    span{
+      display:inline-block;
+      width:50px;
+      height:20px;
+      overflow:hidden;
+    }
+  </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-items first">A</div>
+        <div class="flex-items second">B</div>
+        <div class="flex-items">C</div>
+        <div class="flex-items">D</div>
+        <div class="flex-items">E</div>
+
+        <!-- <span>3544765hne5y4556eyj5jn5mymn5</span> -->
+    </div>
+</body>
+</html>

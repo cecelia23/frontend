@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      /* direction:rtl; */
+    }
+    .flex-container{
+      height:250px;
+      width:400px;
+      display: flex;
+      display:-webkit-flex;
+      flex-direction:column-reverse;
+      -webkit-flex-direction:column;
+      background:lightgray;
+    }
+    .flex-items{
+      width:100px;
+      height:100px;
+      margin:10px;
+      background:cornflowerblue;
+    }
+  </style>
+</head>
+<body>
+  原本子元素宽度应为100px,但由于弹性容器的宽度有限，所以子元素的宽度进行了调整
+  <div class="flex-container">
+    <div class="flex-items">A</div>
+    <div class="flex-items">B</div>
+    <div class="flex-items">C</div>
+    <div class="flex-items">D</div>
+  </div>
+</body>
+</html>
