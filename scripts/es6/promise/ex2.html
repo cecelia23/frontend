@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        // 创建promise对象
+        var oP = function(){
+            return new Promise(function (resolve, reject) {
+            //报错x未定义，无输出（为捕获异常）
+            resolve(x+2);
+        })};
+        oP().then(function() {
+            console.log('执行正确');
+        }).catch(()=>console.log("error"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+    var p1 = new Promise(function (resolve, reject) {
+        console.log('p1');
+        resolve();
+    });
+
+    var p2 = new Promise(function (resolve, reject) {
+        console.log('p2');
+        reject();
+    });
+    var p3 = new Promise(function (resolve, reject) {
+        console.log('p3');
+        resolve();
+    });
+    var p4 = Promise.all([p1, p2, p3]);
+    console.log(p4);//返回值reject
+    </script>
+</body>
+</html>
