@@ -17,7 +17,6 @@
   
   function throttle (fn,delay,text){
     clearInterval(fn.timeoutId);
-    // console.log(this);
     fn.timeoutId = setTimeout(function(){
         fn.call(null,text);
     }, delay);
