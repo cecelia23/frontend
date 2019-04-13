@@ -1,5 +1,6 @@
 function node(val, left, right){
   this.val = val;
+  this.count = 1;
   this.left = left;
   this.right = right;
 }
@@ -38,6 +39,7 @@ BST.prototype.insert = function(val) {
   }
 
 }
+// 中序
 var inOrder = function (node) {
   // 递归
   // if (node!=null){
@@ -195,6 +197,7 @@ var rightOrder = function (node) {
     }
   }
 }
+// 最小值
 var findMini = function(node) {
   if (node == null){
     return;
@@ -206,11 +209,47 @@ var findMini = function(node) {
     console.log(cur.show());
   }
 }
+// 找最大值
 var findMax = function (node) {
   if (node == null) {
-
+    return;
+  } else {
+    var cur = node;
+    while (cur.right != null){
+      cur = cur.right;
+    }
+    console.log(cur.show());
   }
 }
+var find = function (node,val) {
+  if (node == null){
+    return;
+  } else {
+    let cur = node;
+    while(cur != null){
+      if (cur.val == val) {
+        // console.log(cur);
+        return cur;
+        break;
+      }else if(val < cur.val){
+        cur = cur.left;
+      }else if(val > cur.val){
+        cur = cur.right;
+      }
+    }
+    if (cur == null){
+      console.log(false);
+    }
+  }
+}
+// 计数
+var update = function(data) {
+  let grade = find.call(this,this.root,data);
+  grade.count++;
+  // console.log(grade);
+  return grade;
+}
+
 var bst = new BST();
 bst.insert(10);
 bst.insert(23);
@@ -221,9 +260,15 @@ bst.insert(37);
 bst.insert(3);
 bst.insert(99);
 bst.insert(22);
+
 // let res = bst.inOrder(bst.root);
 // let res = bst.leftOrder(bst.root);
+// let res = rightOrder.call(bst,bst.root);
+// console.log(res);
 
-let res = rightOrder.call(bst,bst.root);
 // findMini.call(bst,bst.root);
+// findMax.call(bst,bst.root);
+// let res = find.call(bst,bst.root,45);
+// update.call(bst,45);
+// let res = update.call(bst,45);
 console.log(res);
