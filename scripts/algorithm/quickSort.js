@@ -29,26 +29,25 @@
 // quickSort(0,arr.length-1);
 // console.log(arr)
 function quickSort(arr,left,right){
-  if (left >= right){
-    return arr;
+  if (left >= right) {
+    return ;
   }
-  let i=left,j=right,temp = arr[left],t;
-  while(i!=j){  // 注意！
-    while(arr[j] >= temp && j>i){
+  let i = left, j = right, std = arr[left];
+  while(i != j) {
+    while (arr[j] >= std && j > i) {
       j--;
     }
-    while(arr[i] <= temp && j>i){
+    while (arr[i] <= std && j > i) {
       i++;
     }
-    if (i != j){
-      t = arr[i];
+    if (j != i) {
+      let t = arr[i];
       arr[i] = arr[j];
       arr[j] = t;
     }
   }
-    arr[left] = arr[i];
-    arr[i] = temp;
-
+  arr[left] = arr[i];
+  arr[i] = std;
   quickSort(arr,left,i-1);
   quickSort(arr,i+1,right);
 }
