@@ -30,7 +30,7 @@
 // console.log(arr)
 function quickSort(arr,left,right){
   if (left >= right) {
-    return ;
+    return;
   }
   let i = left, j = right, std = arr[left];
   while(i != j) {
