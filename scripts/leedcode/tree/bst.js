@@ -1,8 +1,10 @@
+// 二叉查找树
 function node(val, left, right){
   this.val = val;
-  this.count = 1;
   this.left = left;
   this.right = right;
+  //非必须
+  this.count = 1;
 }
 node.prototype.show = function(){
   return this.val;
@@ -51,50 +53,17 @@ var inOrder = function (node) {
   let arr = [];
   let res = [];
   let cur = node;
-  // while(cur != null){
-  //   if (cur.left != null){
+  // while (cur != null || arr.length != 0) {
+  //   if (cur) {
   //     arr.push(cur);
   //     cur = cur.left;
-  //   } else {
+  //   }else{
+  //     cur = arr.pop();
   //     res.push(cur.val);
-  //     // console.log(cur.val);
-  //     if (cur.right != null){
-  //       cur = cur.right;
-  //     } else {
-  //       if (arr.length != 0){
-  //         cur = arr.pop();
-  //         res.push(cur.val);
-  //         // console.log(cur.val);
-  //       }
-  //       cur = cur.right;
-  //     }
+  //     cur = cur.right;
   //   }
   // }
-  // while(arr.length != 0){
-  //   cur = arr.pop();
-  //   res.push(cur.val);
-  //   // console.log(cur.val);
-  //   cur = cur.right;
-  //   while(cur != null){
-  //     if (cur.left != null){
-  //       arr.push(cur);
-  //       cur = cur.left;
-  //     } else {
-  //       res.push(cur.val);
-  //       // console.log(cur.val);
-  //       if (cur.right != null){
-  //         cur = cur.right;
-  //       }else{
-  //         if (arr.length!=0){
-  //           cur = arr.pop();
-  //           res.push(cur.val);
-  //           // console.log(cur.val);
-  //         }
-  //         cur = cur.right;
-  //       }
-  //     }
-  //   }
-  // }
+
   while (cur != null || arr.length != 0){
     if (cur) {
       // 当前节点不为空
@@ -109,7 +78,7 @@ var inOrder = function (node) {
   }
   return res;
 }
-
+// 先序
 var leftOrder = function (node) {
   // if (node != null){
   //   console.log(node.show());
@@ -119,6 +88,23 @@ var leftOrder = function (node) {
   var arr = [];
   var res = [];
   var cur = node;
+  // while(cur != null){
+  //   res.push(cur.val);
+  //   if (cur.right != null){
+  //     arr.push(cur.right);
+  //   }
+  //   cur = cur.left;
+  // }
+  // while(arr.length != 0){
+  //   cur = arr.pop();
+  //   while(cur != null){
+  //     res.push(cur.val);
+  //     if (cur.right != null){
+  //       arr.push(cur.right);
+  //     }
+  //     cur = cur.left;
+  //   }
+  // }
   while (cur != null) {
     // console.log(cur.val);
     res.push(cur.val);
@@ -262,7 +248,7 @@ bst.insert(99);
 bst.insert(22);
 
 // let res = bst.inOrder(bst.root);
-// let res = bst.leftOrder(bst.root);
+let res = bst.leftOrder(bst.root);
 // let res = rightOrder.call(bst,bst.root);
 // console.log(res);
 

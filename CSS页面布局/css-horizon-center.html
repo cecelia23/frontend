@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+  }
+  .container{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  header{
+    height:60px;
+    /* flex-basis:在分配多余空间之前，项目在主轴上占据的空间 */
+    /* flex:1 1 60px; */
+    background:orange;
+  }
+  footer{
+    /* flex:1 1 60px; */
+    height:60px;
+  }
+  main{
+    flex:1;
+    display:flex;
+  }
+  aside{
+    width:200px;
+    background:#333;
+  }
+  .content{
+    flex:1;
+  }
+  section{
+    /* height:480px; */
+    background:olive;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  footer{
+    position:relative;
+    height:60px;
+    background:orangered;
+    width:100%;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header></header>
+    <main>
+      <aside></aside>
+      <!-- <div > -->
+          <section class="content">
+            <div>123</div>
+            <div>234</div>
+          </section>
+      <!-- </div> -->
+    </main>
+    <footer></footer>
+  </div>
+</body>
+</html>

@@ -1,7 +1,21 @@
-right = r1;
-// l1.left = l2;
-// // l1.right = l3;
-// // r1.left = r3;
-// // r1.right = r2;
-// l2.left = l3;
-// l3.left 
+while (cur != null) {
+    // console.log(cur.val);
+    res.push(cur.val);
+    if (cur.right != null){
+      arr.push(cur);
+    }
+    cur = cur.left;
+  }
+  
+  while (arr.length != 0){
+    cur = arr.pop();
+    cur = cur.right;
+    while (cur != null) {
+      // console.log(cur.val);
+      res.push(cur.val);
+      if (cur.right != null){
+        arr.push(cur);
+      }
+      cur = cur.left;
+    }
+  }

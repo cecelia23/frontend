@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    html{
+      font-size:62.5%;
+    }
+    button{
+      background:#28B995;
+      color:#ffffff;
+      border:1px solid #28B995;
+      padding:1rem 2rem;
+    }
+    .dialog-container{
+      width:100vw;
+      height:100vh;
+      position:fixed;
+      top:0;
+      left:0;
+      background:#999;
+      opacity:0.5;
+      visibility:hidden;
+      /* display:none; */
+    }
+    .dialog-box{
+      width:30vw;
+      height:20vh;
+      background:#fff;
+      color:#000;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    }
+    .left{
+      float:left;
+    }
+    .right{
+      float:right;
+    }
+    .dialog-title:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+  </style>
+</head>
+<body>
+  <button id="showDialog">点击显示弹出框</button>
+  <div class="dialog-container">
+    <div class="dialog-box">
+      <div class="dialog-title">
+        <span class="left">弹出框标题</span>
+        <span class="right" id="close">关闭</span>
+      </div>
+      <hr>
+      <div class="dialog-content">弹出框正文</div>
+    </div>
+  </div>
+  <script>
+    var isShow = document.querySelector('#showDialog');
+    var dialog = document.querySelector('.dialog-container');
+    var closeDialog = document.querySelector('#close');
+    isShow.addEventListener('click',(event)=>{
+      // console.log(event.target);
+      dialog.style.visibility = "visible";
+    },false);
+    closeDialog.addEventListener('click',(event)=>{
+      dialog.style.visibility = "hidden";
+    },false)
+  </script>
+
+
+</body>
+</html>

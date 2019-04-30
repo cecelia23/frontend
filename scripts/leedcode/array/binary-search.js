@@ -1,19 +1,20 @@
+// 二分查找
 // 非递归，循环
 // var search = function(nums, target) {
-//     let left = 0, right = nums.length-1;
-//     while (left <= right) {
-//       let mid = Math.floor((left+right)/2);
-//       if (target == nums[mid]) {
-//         return mid;
-//       } else if (target < nums[mid]) {
-//         right = mid - 1; 
-//       } else {
-//         left = mid + 1;
-//       }
+//   let left = 0, right = nums.length - 1;
+//   while(left <= right) {
+//     let mid = Math.floor((left+right)/2);
+//     if (target == nums[mid]){
+//       return mid;
+//     } else if (target < nums[mid]){
+//       right = mid - 1;
+//     } else {
+//       left = mid + 1;
 //     }
-//     if (left > right){
-//       mid = -1;
-//     }
+//   }
+//   if (left > right) {
+//     return -1;
+//   }
 //     return mid;
 // };
 
@@ -33,7 +34,7 @@ var search = function (nums,left,right,target) {
   }
 }
 let nums = [-1,0,3,5,9,12];
-let target = 11;
+let target = 9;
 // let res = search(nums,target);
 let res =search(nums,0,nums.length-1,target);
 console.log(res);
