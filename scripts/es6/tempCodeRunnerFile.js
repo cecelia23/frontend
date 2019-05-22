@@ -1,0 +1,2 @@
+rdColor]=colors;
+console.lo

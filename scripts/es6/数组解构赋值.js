@@ -2,8 +2,8 @@ let colors=['red','blue','green'];
 // let [firstColor,secondColor]=colors;
 // console.log(firstColor,secondColor);
 
-// let [,,thirdColor]=colors;
-// console.log(thirdColor);
+let [,,thirdColor]=colors;
+console.log(thirdColor);
 
 // let firstColor='black',
 // secondColor='purple';
@@ -17,7 +17,7 @@ let colors=['red','blue','green'];
 
 // rest parameters
 let [first,...rest]=colors;
-for (let i in rest){
+for (let i in rest) {
   console.log(rest[i]);
 }
 
