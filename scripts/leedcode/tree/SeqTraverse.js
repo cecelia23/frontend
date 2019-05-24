@@ -5,7 +5,7 @@ var node = function (val){
 }
 
 
-
+// 层序查找
 var SeqTraverse = function(node) {
   let arr = [];
   let res = [];

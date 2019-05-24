@@ -140,10 +140,10 @@ var rightOrder = function (node) {
   let cur = node;
   let par = null;
   while (cur != null) {
-    if (cur.left !=null && cur.right !=null){
+    if (cur.left != null && cur.right != null){
       arr.push(cur);
       cur = cur.left;
-    } else if (cur.left != null && cur.right ==null){
+    } else if (cur.left != null && cur.right == null){
       arr.push(cur);
       cur = cur.left;
     } else if (cur.left == null &&cur.right != null) {
@@ -207,6 +207,7 @@ var findMax = function (node) {
     console.log(cur.show());
   }
 }
+// 二叉搜索树：查找
 var find = function (node,val) {
   if (node == null){
     return;
