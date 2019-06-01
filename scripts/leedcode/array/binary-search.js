@@ -20,7 +20,7 @@ var search = function(nums, target) {
 
 //递归，非循环
 // var search = function (nums,left,right,target) {
-//   if (left < 0 || right < 0 || left >= nums.length || right >= nums.length || left > right) {
+//   if (left > right || left < 0 || right >= nums.length) {
 //     return -1;
 //   } else {
 //     let mid = Math.floor((left + right)/2);
