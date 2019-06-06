@@ -2,7 +2,7 @@ let colors=['red','blue','green'];
 // let [firstColor,secondColor]=colors;
 // console.log(firstColor,secondColor);
 
-let [,,thirdColor]=colors;
+let [,,thirdColor] = colors;
 console.log(thirdColor);
 
 // let firstColor='black',
