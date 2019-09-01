@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <div class="imageContent" id="img">
+        <div id="upImg">
+         <span id="imageSpan">添加图片</span>
+         <input type="file" name="file" id="chooseImage"/>
+        </div>
+        <canvas id="imgPreview"></canvas>
+        <div id="tool">
+          <div class="methods" id="dot">点</div>
+          <div class="methods" id="line">线</div>
+          <div class="methods" id="rect">矩形</div>
+          <div class="methods" id="circle">圆</div>
+            <button id="save">保存预览</button>
+        </div>
+    </div>
+    <div class="imageShow"></div>
+  <script>
+
+      $('#chooseImage').on('change', function() {
+        var filePath = $('#chooseImage').val(),//获取到input的value，里面是文件的路径
+        fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+        src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+        // console.log(src);
+      // 检查是否是图片
+      if(!fileFormat.match(/.png|.jpg/)) {
+        error_prompt_alert('上传错误,文件格式必须为：png/jpg');
+      return;
+      } else {
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+        var img = new Image();
+        img.src = src;
+
+        img.onload = function(){
+             var height = img.height,
+             width = img.width,
+             r = height/width;
+
+            // console.log(r);
+            //  if ( r >= 3/5){
+
+                 // context.drawImage(img,0,0,300*width/height,300);  //将图片从Canvas画布的左上角(0,0)位置开始绘制，大小默认为图片实际大小
+             // } else {
+            context.drawImage(img,0,0,300,300*height/width);
+             // }
+
+        }
+          // var 7work =true;
+          
+      $('#imgPreview').css('z-index','3');
+      } 
+    });
+
+    $('#dot').on('click',function(){
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+
+    })
+      $('#line').on('click',function(){
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+
+        var arr=[];
+        canvas.addEventListener('click',function(e){
+            var x1 = e.pageX-canvas.getBoundingClientRect().left;
+            var y1 = e.pageY-canvas.getBoundingClientRect().top;
+            if (arr.length>=4){
+                arr.shift();
+                arr.shift();
+            }
+            arr.push(x1,y1);
+            console.log(arr);
+            context.strokeStyle='yellow';
+            context.linewidth = 5;
+            context.moveTo(arr[0],arr[1]);
+            context.lineTo(arr[2],arr[3]);
+            // context.moveTo(arr[0]/500*width,arr[1]/300*height);
+            // context.lineTo(arr[2]/500*width,arr[3]/300*height);
+            context.stroke();
+            });
+
+        })
+
+      $('#dot').on('click',function(){
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+        var res =Math.floor(Math.random*(23-0))+0;
+        console.log(res);
+
+    })
+      $('#dot').on('click',function(){
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+
+    })
+      $('#save').on('click',function(){
+        var canvas = document.getElementById('imgPreview');
+        var context= canvas.getContext('2d');
+      });
+    </script>
+<style>
+body{
+  position:relative;
+}
+#img {
+ /*position:relative;*/
+ }
+#upImg {
+ position: absolute;
+ top: 50px;
+ left: 250px;
+ height: 300px;
+ width: 500px;
+ border:1px solid black;
+ text-align:center;
+ vertical-align: middle;
+}
+#tool{
+ position: absolute;
+ top: 350px;
+ left: 250px;
+ height: 80px;
+ width: 500px;
+ border:1px solid black;
+}
+#imageSpan{
+  position:absolute;
+  top:140px;
+  left:0;
+  right:0;
+  margin:auto;
+}
+#upImg input {
+ width: 500px;
+ height: 300px;
+ opacity: 0;
+}
+#imgPreview {
+ /* max-height: 300px;
+ max-width:300px; */
+ width:500px;
+ height:300px;
+ position: absolute;
+ top: 50px;
+ left: 250px;
+ border:1px solid black;
+ z-index:-1;
+}
+#save{
+    margin:8px;
+}
+ .methods{
+   display: inline-block;
+   height:50px;
+   width:50px;
+   padding:5px;
+   margin-left:8px;
+   margin-top:8px;
+   border:1px solid black;
+   text-align: center;
+   vertical-align:middle;
+ }
+ .imageShow{
+  position: absolute;
+ top: 450px;
+ left: 250px;
+ height: 100px;
+ width: 500px;
+ border:1px solid black;
+ text-align:center;
+ vertical-align: middle;
+ }
+  </style>
+  
+</body>
+</html>
