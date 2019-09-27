@@ -12,23 +12,26 @@
           // resolve();
           reject();
         });
-        // oP.then(()=>{
-        //   console.log('第一个');
-        // },()=>{
-        //   console.log('第二个');
-        // }).then(()=>{
-        //   console.log("第三个");
-        // }).then(()=>{
-        //   console.log("第四个");
-        // })
         oP.then(()=>{
-          console.log('one');
+          console.log('第一个');
+          throw new Error();
         },()=>{
-          console.log('two');
+          console.log('第二个');   //被处理后返回一个resolved promise
+        }).then(()=>{
+          console.log("第三个");
+        }).then(()=>{
+          console.log("第四个");
+        }).catch(() => {
+          console.log('第五个');
         })
-        oP.catch(()=>{
-          console.log("error");
-        })
+        // oP.then(()=>{
+        //   console.log('one');
+        // },()=>{
+        //   console.log('two');
+        // })
+        // oP.catch(()=>{
+        //   console.log("error");
+        // })
     </script>
 </body>
 </html>

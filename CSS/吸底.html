@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>吸底</title>
+</head>
+<body>
+  <div class="wrapper">
+    <header>标题</header>
+    <div class="content"></div>
+    <footer>通信地址：34234</footer>
+  </div>
+  <style>
+    /* * {
+      border: 1px dashed pink;
+    } */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      min-height: 100vh;
+      box-sizing: border-box;
+      position: relative;
+      padding-bottom: 50px;
+      background-color: yellow;
+    }
+    .content {
+      min-height: calc(100% - 50px);
+      height:1000px;
+    }
+    header {
+      height: 50px;
+    }
+    footer {
+      height: 50px;
+      position: absolute;
+      bottom: 0px;
+    }
+  </style>
+</body>
+</html>

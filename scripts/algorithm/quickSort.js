@@ -11,7 +11,7 @@
 //     while(arr[i]<=temp&&i<j){
 //       i++;   // 从左边扫描，找到比temp大的
 //     }
-//     if (i!=j){
+//     if (i!=j) {
 //       t=arr[i];
 //       arr[i]=arr[j];
 //       arr[j]=t;
