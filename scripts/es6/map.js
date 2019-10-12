@@ -1,7 +1,7 @@
 class Map {
   constructor (arr = []) {
     this.items = {};
-    this.size = arr.length;
+    this.size = 0;
     arr.forEach(arr_item => {
       this.set(arr_item[0], arr_item[1]);
     })
@@ -10,7 +10,7 @@ class Map {
     return this.items.hasOwnProperty(val);
   }
   set (key, val) {
-    if (this.has(key)) {
+    if (!this.has(key)) {
       this.size ++;
     }
     this.items[key] = val;
@@ -43,5 +43,7 @@ let map = new Map([['name', 'alice'], ['age', 19]]);
 console.log(map.has('age'));
 console.log(map.get('age'));
 map.set('address', 'bupt');
+map.set('age',20);
+console.log(map.size);
 console.log(map.keys());
 console.log(map.values());
