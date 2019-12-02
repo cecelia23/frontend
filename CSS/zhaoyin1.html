@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="list">
+        <span>你</span>
+        <span>我</span>
+        <span>他</span>
+        <span>它</span>
+    </div>
+    <script>
+        var list = document.getElementById('list');
+        list.addEventListener('click', () => {
+            alert('我被点击了')
+        });
+        var spans = list.children;
+        for (let i = 0; i < 4; i++) {
+            spans[i].addEventListener('click', (event) => {
+                console.log(spans[i].innerHTML);
+                event.stopPropagation();
+            }, false);
+        }
+    </script>
+</body>
+</html>
